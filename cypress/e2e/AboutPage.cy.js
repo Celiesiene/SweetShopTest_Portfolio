@@ -2,7 +2,7 @@ describe('About Page Test', ()=>{
     it(' Verify that clicking “About” navigates to the site description page.', ()=>{
         cy.visit('https://sweetshop.netlify.app/');
         cy.get('a[href="/about"]').contains('About').click();
-        //mobilioje versijoje yra alert message. pc nera
+        //mobilioje versijoje yra alert message. Kompiuteryje nėra
         cy.get('.my-4 h1').contains('Sweet Shop Project').should('be.visible');
         // Verify that the site description is visible.
         cy.get('.my-4 p').should('be.visible').and('not.be.empty')
@@ -25,5 +25,3 @@ describe('About Page Test', ()=>{
       
 })
 
-//Klaidos:
-//Alert nessage 20% Off Matoma tik mobiliajame telefone. (ne visuose. Testas nepraėjo nes žinutė matoma tik kai kuriuose telefonuose). Kompiuteryje pranešimas nėra matomas. 

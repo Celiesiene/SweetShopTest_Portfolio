@@ -1,0 +1,20 @@
+About Page bugs:
+
+The alert message "20% Off" is visible only on mobile devices (not all of them). The test failed because the message is only visible on certain phones. The notification is not visible on a computer.
+
+Basket Page bugs:
+
+Part of the code related to the payment selection is commented out. As a result, it is not possible to choose Credit Card, Debit Card, or PayPal.
+The CVV field has an incorrect input type, allowing negative numbers.
+It is not possible to navigate to the About page from the Basket page. The a href attribute contains a typo— instead of '/about', it is written as 'bout'.
+
+Home Page bugs:
+
+.messageContainer h2 'Most Popular' is not visible.
+
+Login Page bugs:
+
+The password field accepts a single character, whether it's a letter, number, or even a space.
+The email field validation is too lenient—it only requires any character before and after @ to allow registration.
+The Twitter, Facebook, and LinkedIn links have an empty a attribute, meaning they don't lead anywhere.
+There is no option to log out.

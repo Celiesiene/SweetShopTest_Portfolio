@@ -72,7 +72,8 @@ describe('Basket Page Test', () => {
         cy.get('#basketCount').invoke('text').should('eq', '3');
         cy.get('.input-group input').type('promo123');
         cy.get('.btn').contains('Redeem').click();
-        //KAS TOLIAU CIA TURI NUTIKTI ???
+        cy.get('.invalid-feedback').contains('Please input a valid promo code.').should('be.visible');
+        //testas turi nepraeiti nes Please input a valid promo code. žinutė nėra matoma. 
     });
 
     it('Verify empty cart button works', () => {
@@ -90,9 +91,13 @@ describe('Basket Page Test', () => {
          
     })
 
+    it.only('Verify if the About page is accessible', ()=>{
+        cy.get('a[href="/basket"]').contains('Basket').click();
+        cy.get(':nth-child(2) > .nav-link').click();
+        cy.url().should('eq', 'https://sweetshop.netlify.app/about');
+    })
+    //testas ir turi nepraeiti, nes iš Basket puslapio negalima patekti į About puslapį
+
+
 });
 
-//Klaidos:
-//Dalis kodo, su pasirinkimu kaip mokėti, užkomentuota.  Todėl nėra galimybės pasirinkti Credit card, Debit card or Paypal.
-// CVV įdėtas blogas input type. galima rinktis minusinius skaičius
-//Iš basket puslapio negalima patekti į About puslapį. a href gramatinė klaidą, vietoj /about parašyta bout.
