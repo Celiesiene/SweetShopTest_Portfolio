@@ -20,7 +20,7 @@ describe('Sweet Page Test', () => {
         }); //testas ir turi nepraeiti, nes neatsivaizduoja viena nuotrauka
     });
 
-    it.only('Verify that the item count in the basket updates after adding a product', () => {
+    it('Verify that the item count in the basket updates after adding a product', () => {
         cy.visit('https://sweetshop.netlify.app/');
         cy.AddSomeProducts()
 
@@ -32,6 +32,3 @@ describe('Sweet Page Test', () => {
 
 
 })
-
-//Klaidos: 
-//Wham Bars saldinių nuotrauka nėra matoma, nes src padaryta gramatinė klaidą. vietoj img/wham.jpg parašyta img/whan.jpg

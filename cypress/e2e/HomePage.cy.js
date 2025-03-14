@@ -9,7 +9,7 @@ describe('Home Page Test', () => {
     //Verify that the page contains a product list or recommendations.
     cy.get('.lead').contains('Our most popular choice of retro sweets.').should('be.visible');
     cy.get('.row').children('div').should('have.length.greaterThan', 1);
-    // cy.get('.messageContainer h2').contains('Most popular').should('be.visible'); //testas turi nepraeiti, nes Most Popular neatsivaizduoja.
+    cy.get('.messageContainer h2').contains('Most popular').should('be.visible'); //testas turi nepraeiti, nes Most Popular neatsivaizduoja.
 
   });
 
@@ -30,7 +30,7 @@ describe('Home Page Test', () => {
 
   });
 
-  it('1.5 - Verify that clicking “Browse sweets” displays the full product list', () => {
+  it('Verify that clicking “Browse sweets” displays the full product list', () => {
     cy.visit('https://sweetshop.netlify.app/')
     cy.get('a[href="/sweets"]').contains('Browse Sweets').click();
     cy.url().should('include', '/sweets');

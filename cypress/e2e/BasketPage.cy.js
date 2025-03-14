@@ -91,7 +91,7 @@ describe('Basket Page Test', () => {
          
     })
 
-    it.only('Verify if the About page is accessible', ()=>{
+    it('Verify if the About page is accessible', ()=>{
         cy.get('a[href="/basket"]').contains('Basket').click();
         cy.get(':nth-child(2) > .nav-link').click();
         cy.url().should('eq', 'https://sweetshop.netlify.app/about');
